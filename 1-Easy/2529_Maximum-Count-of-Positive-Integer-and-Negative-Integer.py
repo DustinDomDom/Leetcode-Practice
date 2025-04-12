@@ -42,6 +42,7 @@ def count_positives(nums):
     lo, hi = 0, len(nums)
     while lo < hi:
         mid = (lo + hi) // 2
+        print(lo, mid, hi)
         if nums[mid] <= 0:
             lo = mid + 1
         else:
@@ -49,6 +50,6 @@ def count_positives(nums):
     return len(nums) - lo  
 
 
-print(maximumCount(nums))  
+print(count_positives(nums))  
 
 
