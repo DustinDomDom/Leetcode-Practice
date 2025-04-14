@@ -24,24 +24,47 @@ Output: -1
 
 '''
 
-nums = [4,5,6,7,8,9,0,1,2]
+nums = [4,5,6,7,0,1,2]
 target = 4
 
-def searchLow(nums,target):
-    lo, hi = 0, len(nums) - 1
+def searchLow(nums):
+    
+    left = 0
+    right = len(nums) - 1
 
+    while left < right:
 
-    while lo <= hi:
-        mid = (lo + hi) // 2
+        middle = (left + right) // 2
 
-        if nums[mid] == target:
-            return mid
-        
-        if nums[mid] > target:
-            hi = mid - 1
+        if nums[middle] > nums[right]:
+            left = middle + 1
 
-        elif nums[mid] < target:
-            lo = mid + 1
+        else : 
+            right = middle
+
+        return left
+    
+def search(nums, target):
+    if not nums:
+        return -1
+
+    n = len(nums)
+    pivot = searchLow(nums)
+
+    left = 0
+    right = n - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+        real_mid = (mid + pivot) % n
+
+        if nums[real_mid] == target:
+            return real_mid
+        elif nums[real_mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
     return -1
 
-print(searchLow(nums,target))
+print(search(nums, target))
