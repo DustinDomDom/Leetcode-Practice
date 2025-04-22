@@ -54,4 +54,4 @@ left_leaf_from_right_sub_tree.right = TreeNode(8)
 #      46 8
 
 
-print(root.right.right.key)
+print(root.right.right.left.key)

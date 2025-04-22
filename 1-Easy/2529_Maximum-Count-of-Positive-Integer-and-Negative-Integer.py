@@ -50,6 +50,6 @@ def count_positives(nums):
     return len(nums) - lo  
 
 
-print(count_positives(nums))  
+print(maximumCount(nums))  
 
 
