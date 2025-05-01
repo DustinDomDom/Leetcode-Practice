@@ -32,40 +32,23 @@ Output: "A"
 
 '''
 
-# str = 'PAYPALISHIRING'
-# NumRows = 3
-# ret = ""
+str = 'PAYPALISHIRING'
+NumRows = 3
+ret = ""
 
-# def convert(str, rows):
+def convert(str, rows):
 
-#     if NumRows == 1:
-#         return str
+    if NumRows == 1:
+        return str
 
-#     ret = ""
+    ret = ""
 
-#     for i in range(rows):
-#         if i % 2 == 0: ret += str[i::rows+1]
-#         else : ret += str[i::rows-1]
+    for i in range(rows):
+        if i % 2 == 0: ret += str[i::rows+1]
+        else : ret += str[i::rows-1]
 
-#     return ret
-
-# print(convert(str, NumRows))
-
-
-def convert(s, numRows):
-    if numRows == 1:
-        return s
-    ret = []
-    cycle = 2 * numRows - 2
-    for i in range(numRows):
-        for j in range(i, len(s), cycle):
-            ret.append(s[j])
-            if i != 0 and i != numRows - 1 and j + cycle - 2 * i < len(s):
-                ret.append(s[j + cycle - 2 * i])
     return ret
 
-str = 'PAYPALISHIRING'
-NumRows = 4
 print(convert(str, NumRows))
 
 
