@@ -48,7 +48,6 @@ def romantoInt(strconv):
     for i in range(len(revstr)-1):
         
         x, y = int_to_rom.get(strsplit[i]), int_to_rom.get(strsplit[i+1])
-        print(x,y)
         if x >= y:
             ret += x
         else :
