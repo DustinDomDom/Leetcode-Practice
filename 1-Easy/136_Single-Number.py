@@ -16,7 +16,7 @@ Output: 1
 
 '''
 
-nums = [1]
+nums = [4,1,2,1,2]
 
 # uniqueSet = dict.fromkeys(nums)
 
@@ -33,7 +33,7 @@ def singleNum(nums):
         else:
             findUniq[i] = 1
     
-    return min(findUniq, key=findUniq.get)
+    return min(findUniq, key=findUniq.get), findUniq
 
 
 print(singleNum(nums))

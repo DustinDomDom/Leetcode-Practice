@@ -8,7 +8,7 @@ The integer division should truncate toward zero, which means losing its fractio
 Return the quotient after dividing dividend by divisor.
 
 Note: Assume we are dealing with an environment that could only store integers within the 
-32-bit signed integer range: [−231, 231 − 1]. For this problem, if the quotient is strictly 
+32-bit signed integer range: [231, 231  1]. For this problem, if the quotient is strictly 
 greater than 231 - 1, then return 231 - 1, and if the quotient is strictly less than -231, then return -231.
 
 Example 1:
@@ -22,14 +22,13 @@ Output: -2
 Explanation: 7/-3 = -2.33333.. which is truncated to -2.
  
 '''
-import os, sys
-
+import math
 
 def divide(num1, num2):
 
-    return int(num1 / num2)
+    return int(num1 % num2)
 
 
-dividend, divisor = 10, 3
+dividend, divisor = -2147483648, -1
 
-print(10 + 3)
+print(divide(dividend, divisor))
