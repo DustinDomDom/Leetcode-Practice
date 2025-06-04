@@ -27,7 +27,7 @@ Output: true
 
 '''
 
-s = '[[()]{}}'
+s = '[()]{}'
 
 def is_valid(s):
     pass

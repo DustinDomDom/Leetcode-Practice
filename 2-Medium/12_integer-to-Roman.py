@@ -35,11 +35,6 @@ int_to_rom = {
     "M" : 1000
 }
 
-excpt_case = {
-    
-}
-
-
 def romantoInt(strconv):
     strsplit = list(strconv)
     revstr = strsplit[::-1]
@@ -55,9 +50,6 @@ def romantoInt(strconv):
 
     ret += y
     return ret
-
-
-
 
 
 strconv = "LVIII"
