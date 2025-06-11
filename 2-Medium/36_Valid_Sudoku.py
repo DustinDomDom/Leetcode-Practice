@@ -52,10 +52,6 @@ def check_col(board, arr_col):
         
     return arr_col
 
-
-
 print(check_col(board, arr_col))
-
-
 print(check_row(board, arr_row))
 
