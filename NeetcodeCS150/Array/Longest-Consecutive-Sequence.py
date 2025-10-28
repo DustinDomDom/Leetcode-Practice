@@ -22,7 +22,7 @@ def longestConsecutive(nums):
     for i in range(len(nums)):
         count = 0
         position_a = nums[i]
-        position_b = nums[i - 1]
+        position_b = nums[i + 1]
 
         if position_a + 1 == position_b:
             count += 1
