@@ -22,43 +22,26 @@ board=[["1","2",".",".","3",".",".",".","."],
        [".",".",".","4","1","9",".",".","8"],
        [".",".",".",".","8",".",".","7","9"]]
 
+def check_row(board,temp):
+    for each_row in range(0,9):
 
+        validate = len(list(map(int,temp.join(board[each_row]).replace('.',"")))) == len(list(set(map(int,temp.join(board[each_row]).replace('.',"")))))
+    
+    return validate == True
 
-arr_row = []
-arr_col = []
+def check_col(board):
+    validate = list(zip(*board))
 
-def check_row(board, arr_row):
-    temp_arr = []
+    validate = [
+        [x for x in col if x != '.']
+        for col in validate
+    ]
 
-    for i in range(9):
-        for j in range(9):
-            if board[i][j] != ".":
-                temp_arr.append(int(board[i][j]))
-        arr_row.append(temp_arr)
-        temp_arr = []
-
-    return checker(arr_row)
-
-def checker(arr_check):
-    for i in range(len(arr_check)):
-        if len(set(arr_check[i])) != len(arr_check[i]):
+    for col in validate:
+        if len(col) != len(set(col)):
             return False
-        
+
     return True
 
-def check_col(board, arr_col):
-    temp_arr = []
-
-    for i in range(9):
-        for j in range(9):
-            if board[j][i] != ".":
-                temp_arr.append(int(board[j][i]))
-                
-        arr_col.append(temp_arr)
-        temp_arr = []
+def valid(board):
         
-    return checker(arr_col)
-
-print(check_row(board, arr_row),check_col(board, arr_col))
-
-
